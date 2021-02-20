@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [data]">
+  <parameter name="password" value="admin123"/>
+  <parameter name="username" value="Ad"/>
+  <listeners>
+    <listener class-name="test.listener"/>
+  </listeners>
+  <test name="bothcorrect(failed)">
+    <parameter name="password" value="admin123"/>
+    <parameter name="username" value="Admin"/>
+    <classes>
+      <class name="test.data">
+        <methods>
+          <include name="oneworng" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- test.data -->
+    </classes>
+  </test> <!-- bothcorrect(failed) -->
+  <test name="bothworng(failed)">
+    <parameter name="password" value="admin"/>
+    <parameter name="username" value="Admin123"/>
+    <classes>
+      <class name="test.data">
+        <methods>
+          <include name="bothcorrect" invocation-numbers="0"/>
+          <include name="onecorrect" invocation-numbers="0"/>
+          <include name="oneworng" invocation-numbers="0"/>
+          <include name="bothworng" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- test.data -->
+    </classes>
+  </test> <!-- bothworng(failed) -->
+  <test name="oneworng(failed)">
+    <parameter name="password" value="admin123"/>
+    <parameter name="username" value="Ad"/>
+    <classes>
+      <class name="test.data">
+        <methods>
+          <include name="onecorrect" invocation-numbers="0"/>
+          <include name="oneworng" invocation-numbers="0"/>
+          <include name="bothworng" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- test.data -->
+    </classes>
+  </test> <!-- oneworng(failed) -->
+</suite> <!-- Failed suite [data] -->

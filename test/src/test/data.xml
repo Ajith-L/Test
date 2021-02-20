@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="data">
+<listeners>
+<listener class-name="test.listener"></listener>
+</listeners>
+<test name="bothcorrect">
+<parameter name="username" value="Admin"></parameter>
+<parameter name="password" value="admin123"></parameter>
+<classes>
+<class name="test.data"></class>
+</classes>
+</test>
+
+<test name="bothworng">
+<parameter name="username" value="Admin123"></parameter>
+<parameter name="password" value="admin"></parameter>
+<classes>
+<class name="test.data"></class>
+</classes>
+</test>
+
+<test name="onecorrect">
+<parameter name="username" value="Admin"></parameter>
+<parameter name="password" value="admin"></parameter>
+<classes>
+<class name="test.data"></class>
+</classes>
+</test>
+
+<test name="oneworng">
+<parameter name="username" value="Ad"></parameter>
+<parameter name="password" value="admin123"></parameter>
+<classes>
+<class name="test.data"></class>
+</classes>
+</test>
+
+</suite>
